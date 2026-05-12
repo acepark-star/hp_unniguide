@@ -1,0 +1,751 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>언니가이드 - UnniGuide</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="294d9338-d3d4-80c9-9e57-c78fae65a434" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/LINE_profile.png"/></div><h1 class="page-title" dir="auto">언니가이드 - UnniGuide</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="294d9338-d3d4-80c9-ae41-de47b18124b5" class="block-color-orange_background">기본 정보</h2></div><div style="display:contents" dir="ltr"><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="294d9338-d3d4-80e4-9f01-e57bf450bd3f"><div style="width:100%"><div style="display:contents" dir="ltr"><table id="294d9338-d3d4-80b2-9e0c-cf495088c929" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="294d9338-d3d4-8020-9bd2-ee64bd7217f2"><th id="rodl" class="simple-table-header-color simple-table-header"><strong>항목</strong></th><th id="_XFl" class="simple-table-header-color simple-table-header"><strong>내용</strong></th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="294d9338-d3d4-80c0-b4dd-ea01d8eb7fff"><td id="rodl" class="">수수료율</td><td id="_XFl" class="">시술 10%, 수술 20%</td></tr></div><div style="display:contents" dir="ltr"><tr id="294d9338-d3d4-8020-86a3-c43eeeaf8a11"><td id="rodl" class="">통역 서비스</td><td id="_XFl" class="">필수 포함 아님 (옵션)</td></tr></div><div style="display:contents" dir="ltr"><tr id="294d9338-d3d4-804a-a7cd-e03dd084f38b"><td id="rodl" class="">정산 주기</td><td id="_XFl" class="">월 1회</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-80af-a801-e3507c9bb478" class=""><strong>💡 통역 서비스 안내 </strong></p></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-804d-985a-fad23d835f91" class="">원내에 특정 국가 언어 가능자가 없어도 걱정하실 필요 없습니다.<br/>고객이 통역을 원하는 경우, 언니가이드 팀이 통역을 제공해드리고 있습니다.<br/><br/>현재는 통역 프로모션으로 <strong>언니가이드가 100%</strong> 통역 비용을 지불하고 있습니다.</p></div><div style="display:contents" dir="auto"><p id="34bd9338-d3d4-80d4-bbe3-c5a0aa500192" class="">(26년 5~6월 중 유료화 예정)<br/><br/>언니가이드를 통한 통역을 원하지 않으실 경우, <br/>1) 병원 자체 통역 인력 또는 <br/>2) 외주 통역 업체를 사용해주시길 바랍니다.</p></div></div></figure></div><div style="display:contents" dir="auto"><p id="2f7d9338-d3d4-80aa-94e4-c5d4b94274cd" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="294d9338-d3d4-80d1-8bd0-fa70ca541fca" class="block-color-blue_background">1. 전략과 방향성</h1></div><div style="display:contents" dir="auto"><h2 id="294d9338-d3d4-8036-95e8-eae9ae379af4" class="">✨ UnniGuide 소개 및 전략 개요</h2></div><div style="display:contents" dir="auto"><blockquote id="294d9338-d3d4-8068-b217-d3e3a9a84582" class="">UnniGuide는 강남언니 <strong>플랫폼 차원[누구나 누릴 수 있게]</strong>에서 전개하는 사업으로,<br/>유저 스스로, 강남언니 서비스만으로 병원/의사 선택까지 완료하기 어려운 외국인을 대상으로,<br/>이들이 한국미용의료 병원/의사 선택을 합리적으로 할 수 있도록<br/>강남언니 팀이 온/오프라인에서 직접 도와주는 서비스입니다.</blockquote></div><div style="display:contents" dir="auto"><hr id="294d9338-d3d4-8015-824d-c826decc2dc1"/></div><div style="display:contents" dir="auto"><h2 id="294d9338-d3d4-80fb-b795-c66b561604da" class="">🎯 비전 </h2></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-80cc-af22-ec8fa1d9ab79" class=""><strong>&quot;전 세계 누구나 한국의 선진 미용의료를 합리적으로 누리도록 돕는다.&quot;</strong></p></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-8006-972e-c68f5e08f029" class="">외국인 고객의 한국 미용의료 경험에는 &#x27;높은 의지&#x27;와 &#x27;부족한 정보&#x27; 사이의 명확한 간극이 존재합니다. 언니가이드는 바로 이 간극을 능동적으로 해결하는 데 집중합니다. 저희가 복잡한 정보의 학습과 비교·분석을 책임짐으로써, 고객은 한국인과 동일선상에서 오직 합리적인 &#x27;선택&#x27;과 &#x27;경험&#x27;에만 집중할 수 있습니다.</p></div><div style="display:contents" dir="auto"><hr id="294d9338-d3d4-80f6-ac6b-c79a96795bed"/></div><div style="display:contents" dir="auto"><h2 id="294d9338-d3d4-80c4-9029-f7fe326a4e4c" class="">🧭 전략 방향성</h2></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-80c7-b809-da4ae290a038" class="">✅ 신뢰도 있는 <strong>Equal Price Policy (동일가 정책)</strong></h3></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80fb-9169-e478376f58db" class="bulleted-list"><li style="list-style-type:disc">한국인과 동일한 서비스를 동일한 가격으로 시술/수술 가능하여 외국인 입장에서는 흔히 겪는 ‘바가지 요금’이라는 불신감을 해소해줄 수 있습니다. 이는 마치 한국인 친구와 함께 병원에 방문한 것과 같은 가격 투명성을 보장받습니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-804e-86fe-dc222494710c" class="bulleted-list"><li style="list-style-type:disc">병원과의 계약을 통해 가격 사전 확정 및 투명한 견적 제공합니다.</li></ul></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-804d-ade2-f9225e730d03" class="">✅ 합리적인 수수료 구조</h3></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80cd-91e2-d3c683df41d0" class="bulleted-list"><li style="list-style-type:disc">외국인환자 모객 역할과 케어 영역이 포괄되어 높은 수수료를 받던 모델에서 분리하여 모객 역할에 해당하는 합리적인 수수료를 제안드립니다.<div style="display:contents" dir="auto"><blockquote id="294d9338-d3d4-80ef-a007-cab418a16dca" class=""><strong>시술 10%, 수술 20%</strong></blockquote></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-808c-8f33-c5a7352cbdbb" class="">✅ 플랫폼 정보 활용 신뢰도 있는 병원 추천</h3></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80db-8d67-e5ada42f6d41" class="bulleted-list"><li style="list-style-type:disc">소수의 병원의 이벤트를 기준으로 상담을 하는 경우와 다르게<div style="display:contents" dir="auto"><p id="294d9338-d3d4-8045-9880-e59c5c972f5e" class="">UnniGuide는 특정 병원의 이벤트에 얽매이지 않고, 강남언니 플랫폼 내 누적된 400만 건 이상의 솔직한 후기, 시술 데이터, 평점 등을 기반으로 고객에게 가장 적합한 병원을 객관적으로 추천해 드립니다</p></div></li></ul></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-803a-aebf-ede6f3078ea0" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="294d9338-d3d4-80ad-a965-e7e4bfa6c398" class="block-color-blue_background">2. 서비스 상세</h1></div><div style="display:contents" dir="auto"><hr id="294d9338-d3d4-8026-880d-f6d7bace179d"/></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-8026-acfb-c8d0b8399da8" class="">서비스 대상국가</h3></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8030-839e-c48ab46b1b9a" class="bulleted-list"><li style="list-style-type:disc">한국에 미용의료로 관심있는 <strong>외국인 전체</strong><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8072-86d4-ca9c79d0420f" class="bulleted-list"><li style="list-style-type:circle">언어별로 특성을 가져갈 곳은 아래 3곳<div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8086-b928-c8a3d1d4ac0e" class="bulleted-list"><li style="list-style-type:square">🇺🇸 영미 (미국/캐나다/유럽/중동 및 기타 영어 사용 가능 국가) </li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80ab-a737-eaa5921ef1ed" class="bulleted-list"><li style="list-style-type:square">🇨🇳 중국 (중국본토/대만/홍콩 및 중국어 사용 동남아권)</li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8045-92e7-c3fdd8c9254a" class="bulleted-list"><li style="list-style-type:square">🇹🇭 태국 (태국)</li></ul></div></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-80e1-8555-d91ccb3ece30" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-807f-b5fd-c384a3de0aa6" class="">서비스 포함 항목</h3></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8065-8f42-ddd6a97ecda7" class="bulleted-list"><li style="list-style-type:disc">해외환자 상담 후 일정 예약<div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8062-9a9c-f0ae579256c7" class="bulleted-list"><li style="list-style-type:circle"><strong>UNNI 고객 온라인 상담 → 병원 추천 → 예약 → 병원 방문 시 통역 서비스(유료, 병원 요청시)</strong></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80fc-af52-c7d5a0128e8f" class="bulleted-list"><li style="list-style-type:disc">언니가이드 인증 뱃지 발급(온/오프라인 활용)<div style="display:contents" dir="auto"><ul id="294d9338-d3d4-806b-bd95-c26eada3832c" class="bulleted-list"><li style="list-style-type:circle">언니가이드의 동일가 정책과 합리적인 수수료 구조에 동의하여 계약된 파트너사들에는 <div style="display:contents" dir="auto"><p id="2f7d9338-d3d4-80e8-b8ce-de34aed89d39" class="">언니가이드 인증 뱃지 제공</p></div></li></ul></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-8041-9ec9-fe9777deb0d6" class="">
+</p></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-80d4-ab49-f17273849ca4" class="">서비스 미 포함 항목 </h3></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8080-9022-d6ab90cf2883" class="bulleted-list"><li style="list-style-type:disc">고객 사후 케어</li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-804a-a36b-c3f24f8e883c" class="bulleted-list"><li style="list-style-type:disc">통역,교통,숙박 예약 등은 추가 옵션(실비로 옵션 제공. 고객 지급)</li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80e2-a74a-d03fd6266bf6" class="bulleted-list"><li style="list-style-type:disc">병원이 고객에게 요청해야하는 비용이 있다면 추가로 얘기 필요</li></ul></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-8020-a19e-cf6f9d0ed93e" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-80ea-91d3-ea1ecaea78ec" class="">고객 모객 방법</h3></div><div style="display:contents" dir="auto"><h3 id="2f7d9338-d3d4-80b1-9ce4-c720c369ef8f" class="">1. 온라인</h3></div><div style="display:contents" dir="auto"><ol type="a" id="294d9338-d3d4-808c-8db6-e9c4a541f44e" class="numbered-list" start="1"><li><strong>강남언니 글로벌 앱 홈탭의 플로팅 버튼 &amp; 배너를 통한 모객</strong><div style="display:contents" dir="auto"><ul id="2f7d9338-d3d4-80f4-93c6-cc21dc90c607" class="bulleted-list"><li style="list-style-type:disc">입점 병원은 앱 내 전용 뱃지 &amp; 이미지로 노출</li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-808b-86e9-f819537598e5" class="bulleted-list"><li style="list-style-type:disc">이미지 파일은 입점병원에 전달 후,<strong> 병원이 수정 및 등록</strong></li></ul></div><div style="display:contents" dir="ltr"><figure id="294d9338-d3d4-804d-8b94-cb05f162a015" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/image.png"><img style="width:432px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/image.png"/></a></figure></div></li></ol></div><div style="display:contents" dir="auto"><div id="294d9338-d3d4-808e-9112-f0b938866590" class="column-list"></div></div><div style="display:contents" dir="auto"><div id="294d9338-d3d4-8077-a184-ea941a76ce3d" style="width:50%" class="column"><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-802c-bb50-d87c1b17f71e" class="bulleted-list"><li style="list-style-type:disc">병원 제공용 스티커 지원<div style="display:contents" dir="ltr"><figure id="294d9338-d3d4-80e9-a8e0-f1bbf0bf8d3a" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/image%201.png"><img style="width:384px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/image%201.png"/></a></figure></div></li></ul></div></div></div><div style="display:contents" dir="auto"><div id="294d9338-d3d4-8030-af75-c4af6c79aa62" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="294d9338-d3d4-80e8-b0ca-e4dd30eb276c" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%84%8F%E1%85%A5_%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5.png"><img style="width:240px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%84%8F%E1%85%A5_%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><p id="2f7d9338-d3d4-80c6-a62e-e7bab84b3b95" class=""><strong>b. 홈페이지 랜딩으로의 자체 외부 마케팅 </strong></p></div><div style="display:contents" dir="ltr"><figure id="2f7d9338-d3d4-8038-9538-df59e4f743a7" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/image%202.png"><img style="width:709.9777221679688px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/image%202.png"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2f7d9338-d3d4-80e0-963b-c641e5aa0d79" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.39.57.png"><img style="width:709.9777221679688px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.39.57.png"/></a></figure></div><div style="display:contents" dir="auto"><h3 id="2f7d9338-d3d4-8032-a8f8-c7efff1e732f" class="">2. 오프라인</h3></div><div style="display:contents" dir="auto"><ul id="2f7d9338-d3d4-80fb-a29f-c3b99dfacfc9" class="bulleted-list"><li style="list-style-type:disc">강남언니의 첫 해외 환자 유치 오프라인 센터 ‘언니가이드 라운지’ 3월 3일 오픈</li></ul></div><div style="display:contents" dir="auto"><ul id="2f7d9338-d3d4-8056-b4c5-eb4ab7b481aa" class="bulleted-list"><li style="list-style-type:disc">외국인 환자들의 K뷰티 여정의 오프라인 허브로서 1:1 맞춤형 대면 상담을 진행해. 언니가이드 입점 병원들의 예약까지 도움 </li></ul></div><div style="display:contents" dir="ltr"><figure id="2f7d9338-d3d4-80d8-8901-e9b350be08c3" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.41.52.png"><img style="width:709.9777221679688px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.41.52.png"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2f7d9338-d3d4-80c0-9183-fae731944b94" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.42.09.png"><img style="width:709.9888305664062px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.42.09.png"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2f7d9338-d3d4-80be-a775-ff06d9569181" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.42.26.png"><img style="width:2150px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.42.26.png"/></a></figure></div><div style="display:contents" dir="ltr"><figure id="2f7d9338-d3d4-8083-8a14-d933eb35e832" class="image"><a href="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.42.39.png"><img style="width:709.9888305664062px" src="%EC%96%B8%EB%8B%88%EA%B0%80%EC%9D%B4%EB%93%9C%20-%20UnniGuide/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2026-01-29_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.42.39.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-8029-bfb5-df16812b8055" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="294d9338-d3d4-801e-bafd-d760849ec26d"/></div><div style="display:contents" dir="auto"><h2 id="294d9338-d3d4-80f7-b421-c9a321454bd0" class="block-color-blue_background">입점 조건</h2></div><div style="display:contents" dir="ltr"><figure class="block-color-red_background callout" style="white-space:pre-wrap;display:flex" id="294d9338-d3d4-807f-9041-deec0bb73fb5"><div style="width:100%"><div style="display:contents" dir="auto"><p id="294d9338-d3d4-80ff-afed-dac74270c17c" class=""><strong>⚠️ 필수 조건</strong></p></div><div style="display:contents" dir="auto"><p id="294d9338-d3d4-8074-9472-dcf86da2e727" class=""><strong>** 한국인과 동일한 가격, 동일한 서비스 제공</strong><div class="indented"><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-8006-a149-e430ed15d80b" class="bulleted-list"><li style="list-style-type:disc">강남언니 국내 이벤트가 있는 경우, 해당 이벤트는 해외 유저에게도 동일 가격으로 제공 필수</li></ul></div><div style="display:contents" dir="auto"><ul id="294d9338-d3d4-80c6-a20a-d765919d129d" class="bulleted-list"><li style="list-style-type:disc">통역 인력 인건비 등을 이유로 한국인과 동일한 수가를 제공할 수 없는 경우 → 입점 불가</li></ul></div></div></p></div></div></figure></div><div style="display:contents" dir="ltr"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="294d9338-d3d4-807f-962b-f567fc258558"><div style="width:100%"><div style="display:contents" dir="auto"><p id="294d9338-d3d4-801f-8d56-ea85d8f7513a" class=""><strong>📌 참고:</strong> 강남언니 글로벌서비스 미입점 상태라도 언니가이드는 입점 가능합니다.</p></div></div></figure></div><div style="display:contents" dir="auto"><h2 id="299d9338-d3d4-8091-b739-f8b84307134b" class="block-color-blue_background">언니가이드 입점 + 이후 프로세스</h2></div><div style="display:contents" dir="auto"><h3 id="299d9338-d3d4-8010-8025-c162f23afbf8" class="">입점 결정 이후 프로세스</h3></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80b6-a689-f4631a7be849" class="numbered-list" start="1"><li><strong>계약 및 세팅 단계</strong></li></ol></div><div style="display:contents" dir="ltr"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="299d9338-d3d4-80d0-9d70-e5bc9dd38853"><div style="width:100%"><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-8024-b72d-ead014c2f838" class="numbered-list" start="1"><li><strong>전자계약서 발송 및 서명 완료</strong></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-8010-ae5d-e3eae2a81762" class="numbered-list" start="2"><li><strong>계약 완료 후 병원별 담당자 정보</strong> <strong>공유</strong></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80ec-b762-c329a0bc9e20" class="numbered-list" start="3"><li><strong>병원별 정산 시트 생성</strong></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-8093-93ca-d843cc17231c" class="numbered-list" start="4"><li><strong>병원 ↔ 언니가이드 컨설턴트 단톡방 생성</strong> <strong>(카카오톡 활용)</strong></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-8032-b1d7-dd5af9a27ce0" class="numbered-list" start="5"><li><strong>정산 시트 및 단톡방 링크를 병원에 공유</strong></li></ol></div></div></figure></div><div style="display:contents" dir="auto"><hr id="299d9338-d3d4-8013-bff5-f818f1bfb5ad"/></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80da-a8d5-dc68ba7c83e3" class="numbered-list" start="2"><li><strong>운영 단계</strong></li></ol></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80b4-996f-d2c65630ab56" class="bulleted-list"><li style="list-style-type:disc"><strong>고객 예약 발생 시 프로세스</strong><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-8027-93be-dc663143148f" class="bulleted-list"><li style="list-style-type:circle">병원 단톡방 내에서 컨설턴트 ↔ 병원 운영진 <strong>직접 소통</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80f4-b654-d33e9a54a1ca" class="bulleted-list"><li style="list-style-type:circle">일정 및 예약 확정 후 진행</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="299d9338-d3d4-8014-8f92-f1b6f0035ed2"/></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80f0-a63e-d6695bc94af7" class="numbered-list" start="3"><li><strong>정산 단계</strong></li></ol></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-8078-9f6b-cb9984c03dd8" class="bulleted-list"><li style="list-style-type:disc"><strong>정산 주기: 매월 1회</strong><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80b3-bfdc-d5e552c15507" class="bulleted-list"><li style="list-style-type:circle"><strong>매월 1일</strong>: 병원이 당월 유치 환자 내역을 강남언니로 전달<div style="display:contents" dir="auto"><p id="299d9338-d3d4-80c3-8f69-dcaa3a9b6ce4" class=""><em>(1일이 휴일인 경우, 다음 영업일까지)</em></p></div></li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80a0-a50e-d07557c1058e" class="bulleted-list"><li style="list-style-type:circle"><strong>매월 3일</strong>: 강남언니에서 병원별 정산 내역 확인</li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-808c-8626-f5f8535dc470" class="bulleted-list"><li style="list-style-type:circle"><strong>매월 10일</strong>: 강남언니에서 병원으로 세금계산서 발송</li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-8094-9385-f2291575fe8b" class="bulleted-list"><li style="list-style-type:circle"><strong>세금계산서 수령 후 7영업일 이내</strong>: 병원에서 강남언니에 지급 완료</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="299d9338-d3d4-800d-8fa1-f6937b40b011"/></div><div style="display:contents" dir="auto"><h2 id="299d9338-d3d4-80b1-9d0c-ffbf20e83163" class="block-color-blue_background">정산 검증 및 제재 프로세스</h2></div><div style="display:contents" dir="auto"><p id="299d9338-d3d4-80b3-a00a-d89cd79a9545" class=""><strong>1. 정산 검증이 필요한 이유</strong></p></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-8055-8305-e149e8044320" class="bulleted-list"><li style="list-style-type:disc">언니가이드는 병원과의 신뢰를 기반으로 <strong>투명하게 매출을 검증</strong>하기 위해 정기적으로 일부 환자 케이스를 확인합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80ad-b514-d45ca76d0eb5" class="bulleted-list"><li style="list-style-type:disc">목적은 ‘병원을 의심’하기 위함이 아니라,<div style="display:contents" dir="auto"><p id="299d9338-d3d4-8073-987d-d8f024304995" class=""><strong>양쪽 모두의 데이터를 일치시키고 정산의 정확도를 높이기 위함</strong>입니다.</p></div></li></ul></div><div style="display:contents" dir="auto"><hr id="299d9338-d3d4-808e-ab96-c9e0c8842fd0"/></div><div style="display:contents" dir="auto"><p id="299d9338-d3d4-8062-b4fc-f4963911ff02" class=""><strong>2. 검증 방식</strong></p></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80af-9810-f00cfe60317c" class="bulleted-list"><li style="list-style-type:disc">매월 유치된 환자 중 일부를 <strong>무작위로 선정</strong>합니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-805c-8f82-f5969baaac4b" class="bulleted-list"><li style="list-style-type:disc">이후 아래 방식 중 하나로 결제 내역을 확인합니다:<div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80e1-bec2-c520a68af02a" class="numbered-list" start="1"><li>환자에게 <strong>전화 또는 이메일로 직접 확인</strong></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80dd-a8eb-f10c97cc65aa" class="numbered-list" start="2"><li><strong>환자의 동의</strong>를 받아 <strong>영수증 등 결제 증빙 자료 확인</strong></li></ol></div></li></ul></div><div style="display:contents" dir="auto"><blockquote id="299d9338-d3d4-8015-83c4-ec8449e13c5e" class="">💡 예시: 병원 보고에 ‘A고객 시술비 100만 원’으로 기재되어 있으면,<div style="display:contents" dir="auto"><p id="299d9338-d3d4-806f-95c2-ef79f00ea56f" class="">언니가이드가 실제 결제 내역을 확인해 금액이 일치하는지 검증합니다.</p></div></blockquote></div><div style="display:contents" dir="auto"><hr id="299d9338-d3d4-80f5-bff5-c47ce20f5d16"/></div><div style="display:contents" dir="auto"><p id="299d9338-d3d4-80e4-9891-f5c4d4592571" class=""><strong>3. 불일치 발생 시 조치</strong></p></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-808a-9077-e2bb19e51893" class="bulleted-list"><li style="list-style-type:disc">검증 과정에서 <strong>3회 이상 매출 불일치가 반복적으로 확인될 경우</strong>,<div style="display:contents" dir="auto"><p id="299d9338-d3d4-80fd-a689-f83e6c23ffb8" class="">아래와 같은 조치가 취해질 수 있습니다.</p></div></li></ul></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-80b3-9b6c-f908b55977ac" class="numbered-list" start="1"><li><strong>추천 순위 조정</strong><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80a3-98ef-d17c78943a33" class="bulleted-list"><li style="list-style-type:disc">해당 병원은 언니가이드 앱 내 <strong>추천·노출 우선순위에서 후순위로 조정</strong>됩니다.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="299d9338-d3d4-809b-85ca-cadd36c857c3" class="numbered-list" start="2"><li><strong>계약 해지 및 손해배상</strong><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-80cf-bdd4-fd359cc76f83" class="bulleted-list"><li style="list-style-type:disc">불일치가 <strong>의도적이거나 반복적</strong>인 경우,<div style="display:contents" dir="auto"><p id="299d9338-d3d4-80fc-bbed-dfadad6b67d0" class=""><strong>계약 해지 및 손해배상 청구</strong>가 가능하며, 내부 리스크 관리 대상이 됩니다.</p></div></li></ul></div></li></ol></div><div style="display:contents" dir="auto"><hr id="299d9338-d3d4-802d-9925-dffe981cada9"/></div><div style="display:contents" dir="auto"><p id="299d9338-d3d4-80ab-b477-d936305be221" class=""><strong>4. 제재 전 소명 절차</strong></p></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-8001-9e53-caf80b7b3efb" class="bulleted-list"><li style="list-style-type:disc">어떤 제재든 바로 실행되지는 않습니다.</li></ul></div><div style="display:contents" dir="auto"><ul id="299d9338-d3d4-8028-9d83-e467c459ef80" class="bulleted-list"><li style="list-style-type:disc">언니가이드는 병원에 <strong>불일치 내역을 서면으로 전달</strong>하고,<div style="display:contents" dir="auto"><p id="299d9338-d3d4-80a3-9122-e566b5b83c73" class=""><strong>7 영업일 이내 소명(설명) 또는 이의 제기 기회</strong>를 제공합니다.</p></div></li></ul></div><div style="display:contents" dir="auto"><blockquote id="299d9338-d3d4-8075-bf80-c10730ab6fa6" class="">예: “해당 내역은 고객 환불 처리 중이었음” 등 병원 측 사유를 제출 가능</blockquote></div><div style="display:contents" dir="auto"><p id="299d9338-d3d4-8006-a842-fc76b4e863cc" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="294d9338-d3d4-80d0-b5cf-c57a3d5caa24" class="block-color-blue_background">자주 묻는 질문 (FAQ)</h3></div><div style="display:contents" dir="ltr"><table id="2f7d9338-d3d4-8013-9144-cca14daf8a45" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-8064-be13-c88518906088"><th id="WluE" class="simple-table-header-color simple-table-header" style="width:211.30357360839844px"><strong>질문</strong></th><th id="GoiA" class="simple-table-header-color simple-table-header" style="width:465px"><strong>답변</strong></th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-80c1-9937-ea7170533c30"><td id="WluE" class="" style="width:211.30357360839844px"><strong>병원이 시술 비용 외에 부가 비용을 별도로 청구하고 싶은 경우, 가능할까요?</strong></td><td id="GoiA" class="" style="width:465px">가능합니다. <br/>외국인 환자에게 추가로 발생하는 비용이 있을 경우, <strong>사전에 별도 금액으로 명확히 안내</strong>해주시면, 언니가이드에서도 동일하게 고객에게 전달하여 <strong>선택권을 제공</strong>하겠습니다. 다만 해당 비용이 필수 항목인지 / 선택 옵션인지는 반드시 구분해 주셔야 합니다.</td></tr></div><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-8050-98a9-ca383863a3f0"><td id="WluE" class="" style="width:211.30357360839844px"><strong>외국인 환자가 요청하는 픽업/통역 서비스에도 수수료가 붙나요?</strong></td><td id="GoiA" class="" style="width:465px">언니가이드 픽업 및 통역 서비스는 <strong>언니 고객을 위한 유료 부가 서비스</strong>입니다. <br/>병원 내 외국어 응대 인력이 없는 경우, 언니가이드가 직접 통역사를 매칭합니다. 현재 초기 프로모션으로<strong>통역 비용의 50%는 힐링페이퍼에서 부담</strong>합니다.</td></tr></div><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-8041-ac28-c6a2ef5e5adc"><td id="WluE" class="" style="width:211.30357360839844px"><strong>시술 후에 고객의 사후케어는 <br/>해주나요?</strong></td><td id="GoiA" class="" style="width:465px">언니가이드의 서비스 영역은 아닙니다. <br/>기본적인 질의에 대해서 언니가이드로 오는 문의는 응대해드리며 컴플레인이나 시술에 대한 디테일한 부분은 병원의 확인이 필요한 부분이기 때문에 병원으로 연결해드릴 예정입니다. <br/>(예시: 회복 과정에 대한 기본적인 질의, 추가 시술에 대한 문의, 다음 예약에 대해서 병원에서 바로 예약하기 어려운 경우)</td></tr></div><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-807c-96de-fbf92f5fb076"><td id="WluE" class="" style="width:211.30357360839844px"><strong>고객이 미입점된 병원의 경우도 <br/>추천하게 되나요?</strong></td><td id="GoiA" class="" style="width:465px">고객의 니즈에 가장 적합한 병원을 플랫폼 내의 정보와 제휴 병원의 정보를 바탕으로 추천해드립니다. 미입점된 병원의 경우 예약까지 도와드리지 않습니다.</td></tr></div><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-8049-9339-e22791cd464a"><td id="WluE" class="" style="width:211.30357360839844px"><strong>언니가이드와 UNNI 플랫폼 서비스는 중복으로 과금되나요?</strong></td><td id="GoiA" class="" style="width:465px">언니가이드와 언니 플랫폼은 다른 비즈니스 모델로 별도 과금됩니다. <br/><strong>언니가이드</strong>: 상담이 필요한 고객을 직접 병원으로 연결하는 모객 모델<strong>언니 <br/>플랫폼</strong>: 고객이 병원·이벤트 정보를 확인 후 직접 예약하는 셀프 예약 모델<br/><br/>두 서비스를 함께 이용하실 경우, 한국 미용의료에 관심 있는 외국인 환자를 <strong>상황별로 놓치지 않고 모객</strong>할 수 있습니다.</td></tr></div><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-801e-9428-f14aae09f1a5"><td id="WluE" class="" style="width:211.30357360839844px"><strong>시술과 수술 수수료의 기준은 <br/>어떻게 되나요?</strong></td><td id="GoiA" class="" style="width:465px">병원과 합의하여 시/수술 이벤트에 따라서 과금됩니다. <br/><br/>예시로 시술 10만원, 수술 50만원으로 총 60만원 결제한 고객의 경우 총 수수료 11만원으로 책정됩니다. {시술 10만원 x 10%(수수료)} + {수술 50만원 x 20% 수수료} = 수수료 합계 11만원</td></tr></div><div style="display:contents" dir="ltr"><tr id="2f7d9338-d3d4-80fb-b03b-e63e08c8eaf0"><td id="WluE" class="" style="width:211.30357360839844px"><strong>응대 시간은 어떻게 되나요?</strong></td><td id="GoiA" class="" style="width:465px">기본적으로는 한국의 업무 시간인 오전10시 - 오후 7시까지 응대를 진행합니다. 이후 시간에는 문의를 남겨두면 한국의 병원 업무 시간에 응대를 이어나갈 예정입니다.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="2f7d9338-d3d4-8099-bb22-cc0ed8f2a34d" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
